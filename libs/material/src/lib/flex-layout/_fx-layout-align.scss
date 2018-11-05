@@ -1,0 +1,65 @@
+@mixin _fx-layout-align-bp($align, $breakpoint) {
+  $mediaQuery: map_get($breakpoints, $breakpoint);
+
+  @if $mediaQuery !=null {
+    @media #{$mediaQuery} {
+      @include _fx-layout-align($align);
+    }
+  }
+}
+
+@mixin fx-layout-align($align) {
+  @include _fx-layout-align($align);
+}
+
+@mixin fx-layout-align-xs($align) {
+  @include _fx-layout-align-bp($align, 'xs');
+}
+
+@mixin fx-layout-align-sm($align) {
+  @include _fx-layout-align-bp($align, 'sm');
+}
+
+@mixin fx-layout-align-md($align) {
+  @include _fx-layout-align-bp($align, 'md');
+}
+
+@mixin fx-layout-align-lg($align) {
+  @include _fx-layout-align-bp($align, 'lg');
+}
+
+@mixin fx-layout-align-xl($align) {
+  @include _fx-layout-align-bp($align, 'xl');
+}
+
+@mixin fx-layout-align-lt-sm($align) {
+  @include _fx-layout-align-bp($align, 'lt-sm');
+}
+
+@mixin fx-layout-align-lt-md($align) {
+  @include _fx-layout-align-bp($align, 'lt-md');
+}
+
+@mixin fx-layout-align-lt-lg($align) {
+  @include _fx-layout-align-bp($align, 'lt-lg');
+}
+
+@mixin fx-layout-align-lt-xl($align) {
+  @include _fx-layout-align-bp($align, 'lt-xl');
+}
+
+@mixin fx-layout-align-gt-xs($align) {
+  @include _fx-layout-align-bp($align, 'gt-xs');
+}
+
+@mixin fx-layout-align-gt-sm($align) {
+  @include _fx-layout-align-bp($align, 'gt-sm');
+}
+
+@mixin fx-layout-align-gt-md($align) {
+  @include _fx-layout-align-bp($align, 'gt-md');
+}
+
+@mixin fx-layout-align-gt-lg($align) {
+  @include _fx-layout-align-bp($align, 'gt-lg');
+}

@@ -1,0 +1,66 @@
+
+@mixin _fx-flex-bp($parent, $params, $unset, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-flex($parent, $params, $unset);
+        }
+    }
+}
+
+@mixin fx-flex($parent, $params: '') {
+    @include _fx-flex($parent, $params, false);
+}
+
+@mixin fx-flex-xs($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'xs');
+}
+
+@mixin fx-flex-sm($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'sm');
+}
+
+@mixin fx-flex-md($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'md');
+}
+
+@mixin fx-flex-lg($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'lg');
+}
+
+@mixin fx-flex-xl($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'xl');
+}
+
+@mixin fx-flex-lt-sm($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'lt-sm');
+}
+
+@mixin fx-flex-lt-md($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'lt-md');
+}
+
+@mixin fx-flex-lt-lg($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'lt-lg');
+}
+
+@mixin fx-flex-lt-xl($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'lt-xl');
+}
+
+@mixin fx-flex-gt-xs($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'gt-xs');
+}
+
+@mixin fx-flex-gt-sm($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'gt-sm');
+}
+
+@mixin fx-flex-gt-md($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'gt-md');
+}
+
+@mixin fx-flex-gt-lg($parent, $params: '') {
+    @include _fx-flex-bp($parent, $params, true, 'gt-lg');
+}

@@ -1,0 +1,18 @@
+@mixin bd-border-x($left, $right) {
+    border-left: $left;
+    border-right: $right;
+
+    [dir='rtl'] &,
+    [dir='rtl'] :host & {
+        border-left: $right;
+        border-right: $left;
+    }
+}
+
+@mixin bd-border-left($left) {
+    @include bd-border-x($left, 0);
+}
+
+@mixin bd-border-right($right) {
+    @include bd-border-x(0, $right);
+}

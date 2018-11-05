@@ -1,0 +1,54 @@
+@mixin bd-padding($padding) {
+
+    @if $padding !=null and type-of($padding)==list {
+
+        $length: length($list: $padding);
+
+        @if $length>4 {
+            @error "not support padding with more than 4 values";
+        }
+
+        @else if $length==1 or $length==2 or $length==3 {
+            padding: $padding;
+        }
+
+        @else if $length==4 {
+            $top: nth($align, 1);
+            $right: nth($align, 2);
+            $bottom: nth($align, 3);
+            $left: nth($align, 4);
+
+            @include _support-value(unit($top), ('%', px, vh, vw));
+            @include _support-value(unit($right), ('%', px, vh, vw));
+            @include _support-value(unit($bottom), ('%', px, vh, vw));
+            @include _support-value(unit($left), ('%', px, vh, vw));
+
+            padding: $top $right $bottom $left;
+
+            [dir='rtl'] &,
+            [dir='rtl'] :host & {
+                padding: $top $left $bottom $right;
+            }
+        }
+    }
+}
+
+@mixin bd-padding-x($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+
+    [dir='rtl'] &,
+    [dir='rtl'] :host &,
+        {
+        padding-left: $right;
+        padding-right: $left;
+    }
+}
+
+@mixin bd-padding-left($left) {
+    @include bd-padding-x($left, 0);
+}
+
+@mixin bd-padding-right($right) {
+    @include bd-padding-x(0, $right);
+}

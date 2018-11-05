@@ -1,0 +1,197 @@
+@function _normalize-value($value) {
+    @return if($value==start or $value==end, flex-#{$value}, $value);
+}
+
+@mixin _fx-layout($direction) {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: $direction;
+}
+
+@mixin _fx-layout-align($align) {
+    @include _fx-layout-align-cross-axis($align);
+    @include _fx-layout-align-main-axis($align);
+}
+
+@mixin _fx-layout-align-main-axis($align) {
+    $value: nth($align, 1);
+
+    @include _support-value($value, (null, start, center, end, space-around, space-between, space-evenly));
+
+    @if $value !=null {
+        $value: _normalize-value($value);
+        justify-content: $value;
+    }
+}
+
+@mixin _fx-layout-align-cross-axis($align) {
+    $value: nth($align, 2);
+
+    @include _support-value($value, (null, start, center, end, space-around, space-between, space-evenly, stretch));
+
+    @if $value !=null {
+        $value: _normalize-value($value);
+        align-content: $value;
+        align-items: $value;
+    }
+}
+
+@mixin _fx-layout-gap($direction, $value) {
+    @if $value !=null {
+        @include _support-value(unit($value), ('%', px, vh, vw));
+        @include _support-value($direction, (column, row, column-reverse, row-reverse));
+
+        $margin-direction: if($direction==column, bottom, null);
+        $margin-direction: if($direction==column-reverse, top, $margin-direction);
+        $margin-direction: if($direction==row-reverse, left, $margin-direction);
+        $margin-direction: if($direction==row, right, $margin-direction);
+
+        $margin-direction-rtl: if($direction==row-reverse, right, null);
+        $margin-direction-rtl: if($direction==row, left, $margin-direction);
+
+        &>*:not(:last-child) {
+            margin: 0;
+            margin-#{$margin-direction}: $value;
+
+            [dir='rtl'] &,
+            [dir='rtl'] :host & {
+                margin: 0;
+                margin-#{$margin-direction-rtl}: $value;
+            }
+        }
+    }
+}
+
+@mixin _fx-flex($parent, $params, $unset) {
+
+    @include _support-value($parent, (row, column, row-reverse, column-reverse));
+
+    $grow: 1;
+    $shrink: 1;
+    $basis: 0%;
+    $min-main-value: if($unset, unset, null);
+    $max-main-value: if($unset, unset, null);
+    $min-cross-value: if($unset, unset, null);
+    $max-cross-value: if($unset, unset, null);
+    $main: if($parent==column or $parent==column-reverse, width, height);
+    $cross: if($parent==column or $parent==column-reverse, height, width);
+
+    @if type-of($params)==string {
+        @include _support-value($params, ('', none, nogrow, grow, initial, auto, noshrink));
+
+        @if $params=='' {}
+
+        @else if $params==none {
+            $grow: 0;
+            $shrink: 0;
+            $basis: auto;
+        }
+
+        @else if $params==nogrow {
+            $grow: 0;
+            $shrink: 1;
+            $basis: auto;
+        }
+
+        @else if $params==grow {
+            $grow: 1;
+            $shrink: 1;
+            $basis: 100%;
+            $max-cross-value: 100%;
+        }
+
+        @else if $params==initial {
+            $grow: 0;
+            $shrink: 1;
+            $basis: auto;
+        }
+
+        @else if $params==auto {
+            $grow: 1;
+            $shrink: 1;
+            $basis: auto;
+            $min-cross-value: auto;
+        }
+
+        @else if $params==noshrink {
+            $grow: 1;
+            $shrink: 0;
+            $basis: auto;
+        }
+    }
+
+    @else if type-of($params)==number {
+        @include _support-value(unit($params), ('', '%', px, vh, vw));
+
+        @if $params !=0 {
+            $params: if(unitless($params), $params + '%', $params);
+            $basis: $params;
+            $max-cross-value: $basis;
+            $min-cross-value: if(unit($basis)==px, $basis, null);
+        }
+    }
+
+    @else if type-of($params)==list {
+        $grow: nth($params, 1);
+        $shrink: nth($params, 2);
+        $basis: nth($params, 3);
+    }
+
+    box-sizing: border-box;
+    flex-grow: $grow;
+    flex-shrink: $shrink;
+    flex-basis: $basis;
+
+    @if($min-cross-value !=null) {
+        min-#{$cross}: $min-cross-value;
+    }
+
+    @if($max-cross-value !=null) {
+        max-#{$cross}: $max-cross-value;
+    }
+
+    @if($min-main-value !=null) {
+        min-#{$main}: $min-main-value;
+    }
+
+    @if($max-main-value !=null) {
+        max-#{$main}: $max-main-value;
+    }
+}
+
+@mixin _fx-flex-align($align) {
+    @include _support-value($align, (start, center, end, baseline, stretch));
+    $align: _normalize-value($align);
+    align-self: $align;
+}
+
+@mixin _fx-flex-fill {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@mixin _fx-fill {
+    @include _fx-flex-fill;
+}
+
+@mixin _fx-fill-absolute {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+@mixin _fx-flex-order($order: 0) {
+    @include _only-support-int($order);
+    order: $order;
+}
+
+@mixin _fx-wrap($value) {
+    @if $value !=null {
+        flex-wrap: $value;
+    }
+}

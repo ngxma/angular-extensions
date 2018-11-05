@@ -1,0 +1,65 @@
+@mixin _fx-layout-gap-bp($direction, $value, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+      @media #{$mediaQuery} {
+        @include _fx-layout-gap($direction, $value);
+      }
+    }
+  }
+
+  @mixin fx-layout-gap($direction, $value) {
+    @include _fx-layout-gap($direction, $value);
+  }
+
+  @mixin fx-layout-gap-xs($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'xs');
+  }
+
+  @mixin fx-layout-gap-sm($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'sm');
+  }
+
+  @mixin fx-layout-gap-md($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'md');
+  }
+
+  @mixin fx-layout-gap-lg($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'lg');
+  }
+
+  @mixin fx-layout-gap-xl($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'xl');
+  }
+
+  @mixin fx-layout-gap-lt-sm($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'lt-sm');
+  }
+
+  @mixin fx-layout-gap-lt-md($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'lt-md');
+  }
+
+  @mixin fx-layout-gap-lt-lg($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'lt-lg');
+  }
+
+  @mixin fx-layout-gap-lt-xl($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'lt-xl');
+  }
+
+  @mixin fx-layout-gap-gt-xs($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'gt-xs');
+  }
+
+  @mixin fx-layout-gap-gt-sm($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'gt-sm');
+  }
+
+  @mixin fx-layout-gap-gt-md($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'gt-md');
+  }
+
+  @mixin fx-layout-gap-gt-lg($direction, $value) {
+    @include _fx-layout-gap-bp($direction, $value, 'gt-lg');
+  }

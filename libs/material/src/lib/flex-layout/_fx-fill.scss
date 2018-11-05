@@ -1,0 +1,65 @@
+@mixin _fx-fill-bp($breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-fill;
+        }
+    }
+}
+
+@mixin fx-fill {
+    @include _fx-fill;
+}
+
+@mixin fx-fill-xs {
+    @include _fx-fill-bp('xs');
+}
+
+@mixin fx-fill-sm {
+    @include _fx-fill-bp('sm');
+}
+
+@mixin fx-fill-md {
+    @include _fx-fill-bp('md');
+}
+
+@mixin fx-fill-lg {
+    @include _fx-fill-bp('lg');
+}
+
+@mixin fx-fill-xl {
+    @include _fx-fill-bp('xl');
+}
+
+@mixin fx-fill-lt-sm {
+    @include _fx-fill-bp('lt-sm');
+}
+
+@mixin fx-fill-lt-md {
+    @include _fx-fill-bp('lt-md');
+}
+
+@mixin fx-fill-lt-lg {
+    @include _fx-fill-bp('lt-lg');
+}
+
+@mixin fx-fill-lt-xl {
+    @include _fx-fill-bp('lt-xl');
+}
+
+@mixin fx-fill-gt-xs {
+    @include _fx-fill-bp('gt-xs');
+}
+
+@mixin fx-fill-gt-sm {
+    @include _fx-fill-bp('gt-sm');
+}
+
+@mixin fx-fill-gt-md {
+    @include _fx-fill-bp('gt-md');
+}
+
+@mixin fx-fill-gt-lg {
+    @include _fx-fill-bp('gt-lg');
+}

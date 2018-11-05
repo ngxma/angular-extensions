@@ -1,0 +1,54 @@
+@mixin bd-margin($margin) {
+
+    @if $margin !=null and type-of($margin)==list {
+
+        $length: length($list: $margin);
+
+        @if $length>4 {
+            @error "not support margin with more than 4 values";
+        }
+
+        @else if $length==1 or $length==2 or $length==3 {
+            margin: $margin;
+        }
+
+        @else if $length==4 {
+            $top: nth($align, 1);
+            $right: nth($align, 2);
+            $bottom: nth($align, 3);
+            $left: nth($align, 4);
+
+            @include _support-value(unit($top), ('%', px, vh, vw));
+            @include _support-value(unit($right), ('%', px, vh, vw));
+            @include _support-value(unit($bottom), ('%', px, vh, vw));
+            @include _support-value(unit($left), ('%', px, vh, vw));
+
+            margin: $top $right $bottom $left;
+
+            [dir='rtl'] &,
+            [dir='rtl'] :host &,
+                {
+                margin: $top $left $bottom $right;
+            }
+        }
+    }
+}
+
+@mixin bd-margin-x($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+
+    [dir='rtl'] &,
+    [dir='rtl'] :host & {
+        margin-left: $right;
+        margin-right: $left;
+    }
+}
+
+@mixin bd-margin-left($left) {
+    @include bd-margin-x($left, 0);
+}
+
+@mixin bd-margin-right($right) {
+    @include bd-margin-x(0, $right);
+}

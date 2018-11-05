@@ -1,0 +1,129 @@
+@mixin media-xs {
+    $mediaQuery: map_get($breakpoints, 'xs');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-sm {
+    $mediaQuery: map_get($breakpoints, 'sm');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-md {
+    $mediaQuery: map_get($breakpoints, 'md');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-lg {
+    $mediaQuery: map_get($breakpoints, 'lg');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-xl {
+    $mediaQuery: map_get($breakpoints, 'xl');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-lt-sm {
+    $mediaQuery: map_get($breakpoints, 'lt-sm');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-lt-md {
+    $mediaQuery: map_get($breakpoints, 'lt-md');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-lt-lg {
+    $mediaQuery: map_get($breakpoints, 'lt-lg');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-lt-xl {
+    $mediaQuery: map_get($breakpoints, 'lt-xl');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-gt-xs {
+    $mediaQuery: map_get($breakpoints, 'gt-xs');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-gt-sm {
+    $mediaQuery: map_get($breakpoints, 'gt-sm');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-gt-md {
+    $mediaQuery: map_get($breakpoints, 'gt-md');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}
+
+@mixin media-gt-lg {
+    $mediaQuery: map_get($breakpoints, 'gt-lg');
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @content;
+        }
+    }
+}

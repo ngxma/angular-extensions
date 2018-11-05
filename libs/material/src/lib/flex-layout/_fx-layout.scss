@@ -1,0 +1,65 @@
+@mixin _fx-layout-bp($direction, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-layout($direction);
+        }
+    }
+}
+
+@mixin fx-layout($direction) {
+    @include _fx-layout($direction);
+}
+
+@mixin fx-layout-xs($direction) {
+    @include _fx-layout-bp($direction, 'xs');
+}
+
+@mixin fx-layout-sm($direction) {
+    @include _fx-layout-bp($direction, 'sm');
+}
+
+@mixin fx-layout-md($direction) {
+    @include _fx-layout-bp($direction, 'md');
+}
+
+@mixin fx-layout-lg($direction) {
+    @include _fx-layout-bp($direction, 'lg');
+}
+
+@mixin fx-layout-xl($direction) {
+    @include _fx-layout-bp($direction, 'xl');
+}
+
+@mixin fx-layout-lt-sm($direction) {
+    @include _fx-layout-bp($direction, 'lt-sm');
+}
+
+@mixin fx-layout-lt-md($direction) {
+    @include _fx-layout-bp($direction, 'lt-md');
+}
+
+@mixin fx-layout-lt-lg($direction) {
+    @include _fx-layout-bp($direction, 'lt-lg');
+}
+
+@mixin fx-layout-lt-xl($direction) {
+    @include _fx-layout-bp($direction, 'lt-xl');
+}
+
+@mixin fx-layout-gt-xs($direction) {
+    @include _fx-layout-bp($direction, 'gt-xs');
+}
+
+@mixin fx-layout-gt-sm($direction) {
+    @include _fx-layout-bp($direction, 'gt-sm');
+}
+
+@mixin fx-layout-gt-md($direction) {
+    @include _fx-layout-bp($direction, 'gt-md');
+}
+
+@mixin fx-layout-gt-lg($direction) {
+    @include _fx-layout-bp($direction, 'gt-lg');
+}

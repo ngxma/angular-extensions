@@ -1,0 +1,65 @@
+@mixin _fx-flex-order-bp($order, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-flex-order($order);
+        }
+    }
+}
+
+@mixin fx-flex-order($order) {
+    @include _fx-flex-order($order);
+}
+
+@mixin fx-flex-order-xs($order) {
+    @include _fx-flex-order-bp($order, 'xs');
+}
+
+@mixin fx-flex-order-sm($order) {
+    @include _fx-flex-order-bp($order, 'sm');
+}
+
+@mixin fx-flex-order-md($order) {
+    @include _fx-flex-order-bp($order, 'md');
+}
+
+@mixin fx-flex-order-lg($order) {
+    @include _fx-flex-order-bp($order, 'lg');
+}
+
+@mixin fx-flex-order-xl($order) {
+    @include _fx-flex-order-bp($order, 'xl');
+}
+
+@mixin fx-flex-order-lt-sm($order) {
+    @include _fx-flex-order-bp($order, 'lt-sm');
+}
+
+@mixin fx-flex-order-lt-md($order) {
+    @include _fx-flex-order-bp($order, 'lt-md');
+}
+
+@mixin fx-flex-order-lt-lg($order) {
+    @include _fx-flex-order-bp($order, 'lt-lg');
+}
+
+@mixin fx-flex-order-lt-xl($order) {
+    @include _fx-flex-order-bp($order, 'lt-xl');
+}
+
+@mixin fx-flex-order-gt-xs($order) {
+    @include _fx-flex-order-bp($order, 'gt-xs');
+}
+
+@mixin fx-flex-order-gt-sm($order) {
+    @include _fx-flex-order-bp($order, 'gt-sm');
+}
+
+@mixin fx-flex-order-gt-md($order) {
+    @include _fx-flex-order-bp($order, 'gt-md');
+}
+
+@mixin fx-flex-order-gt-lg($order) {
+    @include _fx-flex-order-bp($order, 'gt-lg');
+}

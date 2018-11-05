@@ -1,0 +1,65 @@
+@mixin _fx-wrap-bp($value, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-wrap($value);
+        }
+    }
+}
+
+@mixin fx-wrap($value) {
+    @include _fx-wrap($value);
+}
+
+@mixin fx-wrap-xs($value) {
+    @include _fx-wrap-bp($value, 'xs');
+}
+
+@mixin fx-wrap-sm($value) {
+    @include _fx-wrap-bp($value, 'sm');
+}
+
+@mixin fx-wrap-md($value) {
+    @include _fx-wrap-bp($value, 'md');
+}
+
+@mixin fx-wrap-lg($value) {
+    @include _fx-wrap-bp($value, 'lg');
+}
+
+@mixin fx-wrap-xl($value) {
+    @include _fx-wrap-bp($value, 'xl');
+}
+
+@mixin fx-wrap-lt-sm($value) {
+    @include _fx-wrap-bp($value, 'lt-sm');
+}
+
+@mixin fx-wrap-lt-md($value) {
+    @include _fx-wrap-bp($value, 'lt-md');
+}
+
+@mixin fx-wrap-lt-lg($value) {
+    @include _fx-wrap-bp($value, 'lt-lg');
+}
+
+@mixin fx-wrap-lt-xl($value) {
+    @include _fx-wrap-bp($value, 'lt-xl');
+}
+
+@mixin fx-wrap-gt-xs($value) {
+    @include _fx-wrap-bp($value, 'gt-xs');
+}
+
+@mixin fx-wrap-gt-sm($value) {
+    @include _fx-wrap-bp($value, 'gt-sm');
+}
+
+@mixin fx-wrap-gt-md($value) {
+    @include _fx-wrap-bp($value, 'gt-md');
+}
+
+@mixin fx-wrap-gt-lg($value) {
+    @include _fx-wrap-bp($value, 'gt-lg');
+}
