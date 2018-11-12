@@ -159,6 +159,16 @@
     }
 }
 
+@mixin _fx-flex-offset($parent-direction, $offset) {
+    @include _support-value(unit($offset), ('', '%', px, vh, vw));
+    @include _support-value($parent-direction, (row, column, row-reverse, column-reverse));
+
+    $offset: if(unitless($offset), $offset + '%', $offset);
+    $margin-direction: if($parent-direction==column or $parent-direction==column-reverse, top, left);
+
+    margin-#{$margin-direction}: $offset;
+}
+
 @mixin _fx-flex-align($align) {
     @include _support-value($align, (start, center, end, baseline, stretch));
     $align: _normalize-value($align);

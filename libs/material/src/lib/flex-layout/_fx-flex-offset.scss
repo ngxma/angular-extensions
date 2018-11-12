@@ -1,0 +1,65 @@
+@mixin _fx-flex-offset-bp($parent-direction, $offset, $breakpoint) {
+    $mediaQuery: map_get($breakpoints, $breakpoint);
+
+    @if $mediaQuery !=null {
+        @media #{$mediaQuery} {
+            @include _fx-flex-offset($parent-direction, $offset);
+        }
+    }
+}
+
+@mixin fx-flex-offset($parent-direction, $offset) {
+    @include _fx-flex-offset($parent-direction, $offset);
+}
+
+@mixin fx-flex-offset-xs($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'xs');
+}
+
+@mixin fx-flex-offset-sm($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'sm');
+}
+
+@mixin fx-flex-offset-md($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'md');
+}
+
+@mixin fx-flex-offset-lg($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'lg');
+}
+
+@mixin fx-flex-offset-xl($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'xl');
+}
+
+@mixin fx-flex-offset-lt-sm($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'lt-sm');
+}
+
+@mixin fx-flex-offset-lt-md($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'lt-md');
+}
+
+@mixin fx-flex-offset-lt-lg($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'lt-lg');
+}
+
+@mixin fx-flex-offset-lt-xl($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'lt-xl');
+}
+
+@mixin fx-flex-offset-gt-xs($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'gt-xs');
+}
+
+@mixin fx-flex-offset-gt-sm($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'gt-sm');
+}
+
+@mixin fx-flex-offset-gt-md($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'gt-md');
+}
+
+@mixin fx-flex-offset-gt-lg($parent-direction, $offset) {
+    @include _fx-flex-offset-bp($parent-direction, $offset, 'gt-lg');
+}
