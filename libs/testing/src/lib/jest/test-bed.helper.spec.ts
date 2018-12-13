@@ -1,6 +1,6 @@
 import {
-    ConfigureFn,
-    configureTests,
+    configureTest,
+    TestFn,
 } from './test-bed.helper';
 
 
@@ -8,13 +8,13 @@ describe('TestBedHelper', () => {
     let testBed: any;
 
     beforeEach(() => {
-        const configure: ConfigureFn = (tb) => {
+        const configure: TestFn = (tb) => {
             tb.configureTestingModule({
                 declarations: [],
                 imports: [],
             });
         };
-        configureTests(configure).then((tb) => {
+        configureTest(configure).then((tb) => {
             testBed = tb;
         });
     });
