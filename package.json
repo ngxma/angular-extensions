@@ -5,10 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "concurrently \"yarn build:bidi\" \"yarn build:flex\" \"yarn build:material\" \"yarn build:testing\"",
+    "build": "concurrently \"yarn build:bidi\" \"yarn build:flex\" \"yarn build:material\" \"yarn build:ps\" \"yarn build:testing\"",
     "build:bidi": "ng build bidi && scss-bundle -c libs/bidi/ng-bundle.json",
     "build:flex": "ng build flex && scss-bundle -c libs/flex/ng-bundle.json",
     "build:material": "ng build material && scss-bundle -c libs/material/ng-bundle.json",
+    "build:ps": "ng build ps && scss-bundle -c libs/ps/ng-bundle.json",
     "build:testing": "ng build testing",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
@@ -46,6 +47,7 @@
     "@nrwl/nx": "7.0.0",
     "@types/jest": "^23.0.0",
     "core-js": "^2.5.4",
+    "ngx-perfect-scrollbar": "^7.2.0",
     "rxjs": "~6.3.3",
     "zone.js": "^0.8.26"
   },

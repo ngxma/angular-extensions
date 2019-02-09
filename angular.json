@@ -7,7 +7,7 @@
       "root": "libs/material",
       "sourceRoot": "libs/material/src",
       "projectType": "library",
-      "prefix": "ngxma",
+      "prefix": "xma",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -34,6 +34,41 @@
             "jestConfig": "libs/material/jest.config.js",
             "tsConfig": "libs/material/tsconfig.spec.json",
             "setupFile": "libs/material/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "ps": {
+      "root": "libs/ps",
+      "sourceRoot": "libs/ps/src",
+      "projectType": "library",
+      "prefix": "xma",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ps/tsconfig.lib.json",
+            "project": "libs/ps/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ps/tsconfig.lib.json",
+              "libs/ps/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ps/jest.config.js",
+            "tsConfig": "libs/ps/tsconfig.spec.json",
+            "setupFile": "libs/ps/src/test-setup.ts"
           }
         }
       }

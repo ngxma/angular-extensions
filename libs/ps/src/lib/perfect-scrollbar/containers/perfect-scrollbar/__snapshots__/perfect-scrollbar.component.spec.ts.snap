@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PerfectScrollbarComponent [@component] should match snapshot 1`] = `
+<div
+  class="xma-perfect-scrollbar"
+  id="root1"
+  ng-version="7.0.2"
+>
+  <perfect-scrollbar>
+    <div
+      class="ps"
+      ng-reflect-disabled="false"
+      style="position: static;"
+    >
+      <div
+        class="ps-content"
+      />
+      <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+      <div
+        class="ps__rail-x"
+        style="left: 0px; bottom: 0px;"
+      >
+        <div
+          class="ps__thumb-x"
+          style="left: 0px; width: 0px;"
+          tabindex="0"
+        />
+      </div>
+      <div
+        class="ps__rail-y"
+        style="top: 0px; right: 0px;"
+      >
+        <div
+          class="ps__thumb-y"
+          style="top: 0px; height: 0px;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </perfect-scrollbar>
+</div>
+`;
+
+exports[`PerfectScrollbarComponent: host component [@component] should match snapshot 1`] = `
+<div
+  id="root3"
+  ng-version="7.0.2"
+>
+  <xma-perfect-scrollbar
+    class="xma-perfect-scrollbar"
+  >
+    <perfect-scrollbar>
+      <div
+        class="ps"
+        ng-reflect-disabled="false"
+        style="position: static;"
+      >
+        <div
+          class="ps-content"
+        >
+          <div>
+            PLACED INSIDE
+          </div>
+        </div>
+        <!--bindings={
+  "ng-reflect-ng-if": "false"
+}-->
+        <div
+          class="ps__rail-x"
+          style="left: 0px; bottom: 0px;"
+        >
+          <div
+            class="ps__thumb-x"
+            style="left: 0px; width: 0px;"
+            tabindex="0"
+          />
+        </div>
+        <div
+          class="ps__rail-y"
+          style="top: 0px; right: 0px;"
+        >
+          <div
+            class="ps__thumb-y"
+            style="top: 0px; height: 0px;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </perfect-scrollbar>
+  </xma-perfect-scrollbar>
+</div>
+`;

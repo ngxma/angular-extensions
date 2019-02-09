@@ -27,6 +27,9 @@
       ],
       "@ngxma/flex": [
         "libs/flex/src/index.ts"
+      ],
+      "@ngxma/ps": [
+        "libs/ps/src/index.ts"
       ]
     }
   },
