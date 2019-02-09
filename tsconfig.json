@@ -24,6 +24,9 @@
       ],
       "@ngxma/bidi": [
         "libs/bidi/src/index.ts"
+      ],
+      "@ngxma/flex": [
+        "libs/flex/src/index.ts"
       ]
     }
   },

@@ -1,0 +1,4 @@
+{
+    "entry": "./libs/flex/sass/flex.mixin.scss",
+    "dest": "dist/libs/flex/_mixin.scss"
+}

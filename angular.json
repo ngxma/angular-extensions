@@ -107,6 +107,41 @@
           }
         }
       }
+    },
+    "flex": {
+      "root": "libs/flex",
+      "sourceRoot": "libs/flex/src",
+      "projectType": "library",
+      "prefix": "ngxma",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/flex/tsconfig.lib.json",
+            "project": "libs/flex/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/flex/tsconfig.lib.json",
+              "libs/flex/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/flex/jest.config.js",
+            "tsConfig": "libs/flex/tsconfig.spec.json",
+            "setupFile": "libs/flex/src/test-setup.ts"
+          }
+        }
+      }
     }
   },
   "cli": {

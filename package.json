@@ -5,8 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "concurrently \"yarn build:bidi\" \"yarn build:material\" \"yarn build:testing\"",
+    "build": "concurrently \"yarn build:bidi\" \"yarn build:flex\" \"yarn build:material\" \"yarn build:testing\"",
     "build:bidi": "ng build bidi && scss-bundle -c libs/bidi/ng-bundle.json",
+    "build:flex": "ng build flex && scss-bundle -c libs/flex/ng-bundle.json",
     "build:material": "ng build material && scss-bundle -c libs/material/ng-bundle.json",
     "build:testing": "ng build testing",
     "test": "ng test",
