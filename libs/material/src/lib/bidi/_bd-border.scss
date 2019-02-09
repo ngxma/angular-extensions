@@ -1,4 +1,8 @@
-@mixin bd-border-x($left, $right) {
+@mixin bd-border-x($left, $right: null) {
+    @if ($right == null) {
+        $right: $left;
+    }
+
     border-left: $left;
     border-right: $right;
 
