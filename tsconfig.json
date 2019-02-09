@@ -21,6 +21,9 @@
       ],
       "@ngxma/testing": [
         "libs/testing/src/index.ts"
+      ],
+      "@ngxma/bidi": [
+        "libs/bidi/src/index.ts"
       ]
     }
   },

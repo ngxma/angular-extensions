@@ -1,0 +1,4 @@
+{
+    "entry": "./libs/bidi/sass/bidi.scss",
+    "dest": "dist/libs/bidi/_mixin.scss"
+}

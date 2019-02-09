@@ -72,6 +72,41 @@
           }
         }
       }
+    },
+    "bidi": {
+      "root": "libs/bidi",
+      "sourceRoot": "libs/bidi/src",
+      "projectType": "library",
+      "prefix": "ngxma",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/bidi/tsconfig.lib.json",
+            "project": "libs/bidi/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/bidi/tsconfig.lib.json",
+              "libs/bidi/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/bidi/jest.config.js",
+            "tsConfig": "libs/bidi/tsconfig.spec.json",
+            "setupFile": "libs/bidi/src/test-setup.ts"
+          }
+        }
+      }
     }
   },
   "cli": {
