@@ -1,4 +1,7 @@
 @mixin ps-fill {
-    flex: 1 1 inherit;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: inherit;
     overflow: hidden;
+    height: 100%;
 }
