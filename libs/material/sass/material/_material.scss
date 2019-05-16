@@ -1,0 +1,28 @@
+@mixin mat-size($size) {
+    height: $size;
+    width: $size;
+}
+
+@mixin mat-round-size($size) {
+    height: $size;
+    width: $size;
+    border-radius: $size / 2;
+}
+
+@mixin mat-icon-size($width, $height: null) {
+    @if ($height==null) {
+        $height: $width;
+    }
+    font-size: $height;
+    height: $height;
+    width: $width;
+    line-height: $height;
+}
+
+@mixin mat-fill {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
