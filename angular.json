@@ -23,13 +23,11 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/material/jest.config.js",
             "tsConfig": "libs/material/tsconfig.spec.json",
@@ -58,13 +56,11 @@
               "libs/ps/tsconfig.lib.json",
               "libs/ps/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/ps/jest.config.js",
             "tsConfig": "libs/ps/tsconfig.spec.json",
@@ -93,13 +89,11 @@
               "libs/testing/tsconfig.lib.json",
               "libs/testing/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/testing/jest.config.js",
             "tsConfig": "libs/testing/tsconfig.spec.json",
@@ -128,13 +122,11 @@
               "libs/bidi/tsconfig.lib.json",
               "libs/bidi/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/bidi/jest.config.js",
             "tsConfig": "libs/bidi/tsconfig.spec.json",
@@ -163,13 +155,11 @@
               "libs/flex/tsconfig.lib.json",
               "libs/flex/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
-          "builder": "@nrwl/builders:jest",
+          "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/flex/jest.config.js",
             "tsConfig": "libs/flex/tsconfig.spec.json",
@@ -184,8 +174,26 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "yarn"
   },
-  "defaultProject": "material"
+  "defaultProject": "material",
+  "schematics": {
+    "@nrwl/schematics:application": {
+			"styleext": "scss",
+			"unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+		},
+    "@nrwl/schematics:component": {
+      "styleext": "scss",
+			"unitTestRunner": "jest"
+    },
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "jest",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    }
+  }
 }
