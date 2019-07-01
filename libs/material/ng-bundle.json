@@ -1,4 +1,4 @@
 {
-    "entry": "./libs/material/src/lib/material.mixin.scss",
+    "entry": "./libs/material/sass/material.mixin.scss",
     "dest": "dist/libs/material/_mixin.scss"
 }

@@ -13,10 +13,10 @@
         }
 
         @else if $length==4 {
-            $top: nth($align, 1);
-            $right: nth($align, 2);
-            $bottom: nth($align, 3);
-            $left: nth($align, 4);
+            $top: nth($padding, 1);
+            $right: nth($padding, 2);
+            $bottom: nth($padding, 3);
+            $left: nth($padding, 4);
 
             @include _support-value(unit($top), ('%', px, vh, vw));
             @include _support-value(unit($right), ('%', px, vh, vw));
@@ -34,7 +34,7 @@
 }
 
 @mixin bd-padding-x($left, $right: null) {
-    @if ($right == null) {
+    @if ($right==null) {
         $right: $left;
     }
 
